@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   Button,
   SafeAreaView,
@@ -25,11 +25,11 @@ export default (props: any) => {
       setShowtext(result || '');
     } catch (error) {
       console.log(error);
-    }1
+    } 1
   };
   return (
     <SafeAreaView style={styles.root}>
-      <TextInput onChangeText={onChangeText} value={text}></TextInput>
+      <TextInput style={styles.input} onChangeText={onChangeText} value={text}></TextInput>
       <Button title={'Save'} onPress={onSave} />
       <Button title={'GET'} onPress={onGet} />
       <Text>Result:{showText}</Text>
@@ -40,4 +40,13 @@ const styles = StyleSheet.create({
   root: {
     flex: 1,
   },
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10
+  },
+  button: {
+    margin: 12
+  }
 });
