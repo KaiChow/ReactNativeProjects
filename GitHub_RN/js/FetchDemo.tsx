@@ -1,5 +1,11 @@
 import React, {useState} from 'react';
-import {SafeAreaView, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {
+  Button,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+} from 'react-native';
 export default () => {
   const [msg, setMsg] = useState('');
   const doFetch = () => {
@@ -14,8 +20,12 @@ export default () => {
   };
   return (
     <SafeAreaView style={styles.root}>
-      <TouchableOpacity onPress={doFetch}>
-        <Text>加载</Text>
+      <TouchableOpacity>
+        <Button
+          title="加载数据"
+          onPress={doFetch}
+          accessibilityLabel="Learn more about this purple button"
+        />
       </TouchableOpacity>
       <Text>{msg}</Text>
     </SafeAreaView>
